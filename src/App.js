@@ -1,27 +1,27 @@
-import Accordion from "./components/Accordion";
-
+import { useContext } from "react"
+import { NavigationContext } from "./context/navigation"
+import Sidebar from "./components/Sidebar"
+import Route from "./components/Route"
+import AccordionPage from "./pages/AccordionPage"
+import DropdownPage from "./pages/DropdownPage"
+import ButtonPage from "./pages/ButtonPage"
 const App = () => {
-  const items = [
-    {
-      _id: "321",
-      label: "can i use react on a project",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur distinctio dolores hic possimus quaerat\n",
-    },
-    {
-      _id: "323211",
-      label: "can i use javascript on a project",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, officia!",
-    },
-    {
-      _id: "321312",
-      label: "can i use css on a project",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliquam beatae, culpa eaque exercitationem fugiat harum iure reprehenderit velit voluptates?",
-    },
-  ];
-  return <Accordion items={items} />;
-};
+  return (
+    <div className="container mx-auto grid grid-cols-6 gap-4 mt-4">
+      <Sidebar />
+      <div className="col-span-5">
+        <Route path="/accordion">
+          <AccordionPage />
+        </Route>
+        <Route path="/">
+          <DropdownPage />
+        </Route>
+        <Route path="/buttons">
+          <ButtonPage />
+        </Route>
+      </div>
+    </div>
+  )
+}
 
-export default App;
+export default App
