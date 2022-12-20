@@ -1,12 +1,14 @@
-import { useContext } from "react"
-import { NavigationContext } from "./context/navigation"
-import Sidebar from "./components/Sidebar"
-import Route from "./components/Route"
-import AccordionPage from "./pages/AccordionPage"
-import DropdownPage from "./pages/DropdownPage"
-import ButtonPage from "./pages/ButtonPage"
-import ModalPage from "./pages/ModalPage"
-import Modal from "./components/Modal"
+import { useContext } from "react";
+import { NavigationContext } from "./context/navigation";
+import Sidebar from "./components/Sidebar";
+import Route from "./components/Route";
+import AccordionPage from "./pages/AccordionPage";
+import DropdownPage from "./pages/DropdownPage";
+import ButtonPage from "./pages/ButtonPage";
+import ModalPage from "./pages/ModalPage";
+import Modal from "./components/Modal";
+import Table from "./components/Table";
+import { TablePage } from "./pages/TablePage";
 const App = () => {
   return (
     <div className="container mx-auto grid grid-cols-6 gap-4 mt-4">
@@ -24,9 +26,12 @@ const App = () => {
         <Route path="/modal">
           <ModalPage />
         </Route>
+        <Route path="/table">
+          <TablePage />
+        </Route>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

@@ -1,11 +1,12 @@
-import Link from "./Link"
+import Link from "./Link";
 export default function Sidebar() {
   const links = [
     { label: "Dropdown", path: "/" },
     { label: "Accordion", path: "/accordion" },
     { label: "Buttons", path: "/buttons" },
     { label: "Modal", path: "/modal" },
-  ]
+    { label: "Table", path: "/table" },
+  ];
   const renderedLinks = links.map((link) => {
     return (
       <Link
@@ -16,11 +17,11 @@ export default function Sidebar() {
       >
         {link.label}
       </Link>
-    )
-  })
+    );
+  });
   return (
     <div className="sticky top-0  flex flex-col items-start">
       {renderedLinks}
     </div>
-  )
+  );
 }
